@@ -1,15 +1,22 @@
-// let soup = "chicken noodle soup";
-let customerIsBanned = false;
-let soup = "checken noodle soup";
-let reply;
-let crackers = true
-if (customerIsBanned) {
-    reply = "No soup for you!"
-} else if (soup && crackers) {
-    reply = `Here is your order of ${soup} and crackers`
-} else if (soup) {
-    reply = `Here is your order of ${soup}`
+let testScore = 59;
+let grade;
+
+let collegeStudent = false
+
+if (testScore >= 90) {
+    grade = "A";
+} else if (testScore >= 80) {
+    grade = "B";
+} else if (testScore >= 70) {
+    grade = "C";
+} else if (testScore >= 60) {
+    grade = "D";
 } else {
-    reply = `Sorry, we're out of soup.`
+    if (collegeStudent) {
+        grade = "U";
+    } else {
+        grade = "F";
+    }
 }
-console.log(reply)
+
+console.log(grade)
