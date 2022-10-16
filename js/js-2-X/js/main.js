@@ -1,22 +1,28 @@
-let testScore = 59;
-let grade;
+let playerOne = "scissors"
+let computer = "rock"
 
-let collegeStudent = false
-
-if (testScore >= 90) {
-    grade = "A";
-} else if (testScore >= 80) {
-    grade = "B";
-} else if (testScore >= 70) {
-    grade = "C";
-} else if (testScore >= 60) {
-    grade = "D";
-} else {
-    if (collegeStudent) {
-        grade = "U";
-    } else {
-        grade = "F";
-    }
+switch (playerOne) {
+    case computer:
+        console.log("Tie game!");
+        break;
+    case "rock":
+        if (computer === "paper") {
+            console.log("Computer wins!");
+        } else {
+            console.log("Player one wins");
+        }
+        break;
+    case "paper":
+        if (computer === "scissors") {
+            console.log("Computer wins!");
+        } else {
+            console.log("Player one wins");
+        }
+        break;
+    default:
+        if (computer === "rock") {
+            console.log("Computer wins!");
+        } else {
+            console.log("Player one wins");
+        }
 }
-
-console.log(grade)
