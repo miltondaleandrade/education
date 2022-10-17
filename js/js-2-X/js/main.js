@@ -1,7 +1,7 @@
-let soup = "Chicken noodle soup";
-
-let isCustomerBanned = true;
-
-let soupAccess = isCustomerBanned ? "Sorry, no soup for you!" : soup ? "Yes, we have soup" : "Sorry, no soup today!"
-
-console.log(soupAccess);
+let name = prompt("Please enter your name.");
+console.log("The name is: " + (name ?? "not entered"));
+if (name && name.trim()) {
+    console.log("The name is: " + name.trim());
+} else {
+    console.log("The name is: " + "not entered");
+}
