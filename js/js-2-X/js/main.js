@@ -1,7 +1,12 @@
-let name = prompt("Please enter your name.");
-console.log("The name is: " + (name ?? "not entered"));
-if (name && name.trim()) {
-    console.log("The name is: " + name.trim());
+let playGame = confirm("Shall we play?");
+if (playGame) {
+    let choice = prompt("Please enter rock, paper or scissors.");
+    let playerOne = choice ? choice.trim().toUpperCase() : choice;
+    if (playerOne) {
+        // todo
+    } else {
+        alert("I guess you changed your mind. Maybe next time! Bye!")
+    }
 } else {
-    console.log("The name is: " + "not entered");
+    alert("Ok, maybe next time! Bye!")
 }
