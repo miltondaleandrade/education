@@ -1,12 +1,45 @@
-let playGame = confirm("Shall we play?");
-if (playGame) {
-    let choice = prompt("Please enter rock, paper or scissors.");
-    let playerOne = choice ? choice.trim().toUpperCase() : choice;
-    if (playerOne) {
-        // todo
-    } else {
-        alert("I guess you changed your mind. Maybe next time! Bye!")
+// let myNumber = 0;
+// while (myNumber < 50) {
+//     myNumber++;
+//     console.log("My number: " + myNumber);
+// }
+
+// don't create an endless loop.
+
+// let myNumber = 50;
+// do {
+//     console.log("My number: " + myNumber);
+// } while (myNumber < 50);
+
+// let name = "Andrej"
+// for (let i = 0; i < name.length; i++) {
+//     console.log(name.charAt(i));
+// }
+
+// let name = "Andrej"
+// let counter = 0;
+// let myLetter;
+// while (true) {
+//     myLetter = name[counter];
+//     console.log("My Letter = " + myLetter)
+//     if (myLetter === "r") {
+//         break;
+//     }
+//     counter++;
+// }
+
+let name = "Andrej"
+let counter = 0;
+let myLetter;
+while (counter <= 5) {
+    myLetter = name[counter];
+    console.log("My Letter = " + myLetter)
+    if (counter === 2) {
+        counter += 2;
+        continue;
     }
-} else {
-    alert("Ok, maybe next time! Bye!")
+    if (myLetter === "r") {
+        break;
+    }
+    counter++;
 }
