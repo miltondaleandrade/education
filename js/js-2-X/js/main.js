@@ -1,34 +1,45 @@
-// Function declaration Syntax:
-
-// function sum(num1, num2) {
-//     if (num2 === undefined) {
-//         return num1 + num1
+// // Global scope
+// var x = 1;
+// let y = 2;
+// const z = 3;
+//
+// // local scope
+// function myFunc() {
+//     const z = 5;
+//     console.log(y);
+//     if (true) {
+//         const y = 4;
+//         console.log(y);
 //     }
-//     return num1 + num2;
+//     console.log(y);
 // }
 //
-// console.log("Sum: " + sum(5, 10));
+// myFunc();
 
-// function getUsernameFromEmail(email) {
-//     return email.slice(0, email.indexOf("@"));
-// }
-//
-// console.log("Username: " + getUsernameFromEmail("andrej@gmail.com"));
+var x = 1;
+let y = 2;
+const z = 3;
 
-// const getUsernameFromEmail = function (email) {
-//     return email.slice(0, email.indexOf("@"));
-// }
-//
-// console.log("Username: " + getUsernameFromEmail("andrej@gmail.com"));
+console.log(`global ${x}`);
+console.log(`global ${y}`);
+console.log(`global ${z}`);
 
-// const getUsernameFromEmail = (email) => {
-//     return email.slice(0, email.indexOf("@"));
-// }
-//
-// console.log("Username: " + getUsernameFromEmail("john@gmail.com"));
+function myFunc() {
+    var x = 10;
+    const z = 5;
+    console.log(`function ${x}`);
+    console.log(`function ${y}`);
+    console.log(`function ${z}`);
+    {
+        var x = 11;
+        const z = 6;
+        console.log(`block ${x}`);
+        console.log(`block ${y}`);
+        console.log(`block ${z}`);
+    }
+    console.log(`function ${x}`);
+    console.log(`function ${y}`);
+    console.log(`function ${z}`);
+}
 
-const toProperCase = (name) => {
-    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-};
-
-console.log(toProperCase("aNdReJ"));
+myFunc();
