@@ -1,45 +1,34 @@
-// let myNumber = 0;
-// while (myNumber < 50) {
-//     myNumber++;
-//     console.log("My number: " + myNumber);
-// }
+// Function declaration Syntax:
 
-// don't create an endless loop.
-
-// let myNumber = 50;
-// do {
-//     console.log("My number: " + myNumber);
-// } while (myNumber < 50);
-
-// let name = "Andrej"
-// for (let i = 0; i < name.length; i++) {
-//     console.log(name.charAt(i));
-// }
-
-// let name = "Andrej"
-// let counter = 0;
-// let myLetter;
-// while (true) {
-//     myLetter = name[counter];
-//     console.log("My Letter = " + myLetter)
-//     if (myLetter === "r") {
-//         break;
+// function sum(num1, num2) {
+//     if (num2 === undefined) {
+//         return num1 + num1
 //     }
-//     counter++;
+//     return num1 + num2;
 // }
+//
+// console.log("Sum: " + sum(5, 10));
 
-let name = "Andrej"
-let counter = 0;
-let myLetter;
-while (counter <= 5) {
-    myLetter = name[counter];
-    console.log("My Letter = " + myLetter)
-    if (counter === 2) {
-        counter += 2;
-        continue;
-    }
-    if (myLetter === "r") {
-        break;
-    }
-    counter++;
-}
+// function getUsernameFromEmail(email) {
+//     return email.slice(0, email.indexOf("@"));
+// }
+//
+// console.log("Username: " + getUsernameFromEmail("andrej@gmail.com"));
+
+// const getUsernameFromEmail = function (email) {
+//     return email.slice(0, email.indexOf("@"));
+// }
+//
+// console.log("Username: " + getUsernameFromEmail("andrej@gmail.com"));
+
+// const getUsernameFromEmail = (email) => {
+//     return email.slice(0, email.indexOf("@"));
+// }
+//
+// console.log("Username: " + getUsernameFromEmail("john@gmail.com"));
+
+const toProperCase = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+};
+
+console.log(toProperCase("aNdReJ"));
