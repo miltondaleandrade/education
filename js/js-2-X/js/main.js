@@ -1,45 +1,57 @@
-// // Global scope
-// var x = 1;
-// let y = 2;
-// const z = 3;
+// const myArray = [];
+// myArray[0] = "Andrej";
+// myArray[1] = 1001;
+// myArray[2] = false;
+
+// console.log(myArray);
+// console.log(myArray.length);
+// console.log(myArray[myArray.length - 1]);
+// console.log(myArray[1]);
+
+// myArray.push("school")
+// console.log(myArray);
 //
-// // local scope
-// function myFunc() {
-//     const z = 5;
-//     console.log(y);
-//     if (true) {
-//         const y = 4;
-//         console.log(y);
-//     }
-//     console.log(y);
-// }
+// const lastItem = myArray.pop()
+// console.log(myArray);
+// console.log(lastItem);
 //
-// myFunc();
+// const newLength = myArray.unshift(42);
+// console.log(myArray);
+// console.log(newLength);
+//
+// const firstItem = myArray.shift();
+// console.log(myArray);
+// console.log(firstItem);
+// console.log(myArray[1]);
 
-var x = 1;
-let y = 2;
-const z = 3;
+// delete myArray[1];
+// console.log(myArray);
+// console.log(myArray[1]);
 
-console.log(`global ${x}`);
-console.log(`global ${y}`);
-console.log(`global ${z}`);
+// myArray.splice(1, 1);
+// myArray.splice(1, 1, 42);
+// myArray.splice(1, 0, 42, "test");
+// console.log(myArray);
+// console.log(myArray[1]);
 
-function myFunc() {
-    var x = 10;
-    const z = 5;
-    console.log(`function ${x}`);
-    console.log(`function ${y}`);
-    console.log(`function ${z}`);
-    {
-        var x = 11;
-        const z = 6;
-        console.log(`block ${x}`);
-        console.log(`block ${y}`);
-        console.log(`block ${z}`);
-    }
-    console.log(`function ${x}`);
-    console.log(`function ${y}`);
-    console.log(`function ${z}`);
-}
+const myArray = ["A", "B", "C", "D", "E", "F"];
+console.log(myArray);
 
-myFunc();
+const newArray = myArray.slice(2, 5);
+console.log(newArray);
+
+console.log(myArray.reverse());
+const separator = "; ";
+const joined = myArray.join(separator);
+console.log(joined);
+console.log(joined.split(separator));
+
+const arrayA = ["A", "B", "C"];
+const arrayB = ["D", "E", "F"];
+console.log(arrayA.concat(arrayB))
+console.log([...arrayA, ...arrayB])
+
+
+const multiArray = [[1,2,3],[4,5,6],[7,8,9]];
+console.log(multiArray);
+console.log(multiArray[1][1]);
