@@ -1,46 +1,11 @@
-/** {*/
-/*    font-family: AppleGothic, serif;*/
-/*    border: 1px solid red;*/
-/*}*/
-
-html {
-    /*font-size: 50px;*/
-}
-
-main {
-    font-family: monospace;
-}
-
 body {
     font-size: 22px;
-    /*border: 3px solid black;*/
-}
-
-button, input, textarea, select {
-    font: inherit;
-}
-
-h1, h2 {
-    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background: papayawhip;
+    color: rgb(0, 0, 0);
 }
 
 p {
-    color: purple!important;
-}
-
-p {
-    color: wheat;
-}
-
-p span {
-    text-transform: uppercase;
-    background-color: gold;
-}
-
-.gray {
-    color: gray;
-}
-
-#second {
-    font-style: italic;
+    color: #333;
 }
