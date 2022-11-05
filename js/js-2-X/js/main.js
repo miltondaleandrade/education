@@ -1,20 +1,28 @@
-const myobj = {
-    name: "Test Obj",
-    arr: ["One", "Two", "Three"],
-    print: function () {
-        console.log(`Name: ${this.name}; arr: ${this.arr}`)
+class Vehicle {
+    constructor(wheels) {
+        this.wheels = wheels;
     }
-};
 
-const inherited = Object.create(myobj);
-inherited.obj = {
-    nested: "Nexted"
+    drive() {
+        console.log(`Vehicle with the ${this.wheels} wheels is moving...`);
+    }
 }
 
-inherited.printAll = function () {
-    console.log("Parent:");
-    this.print();
-    console.log(`Mine: ${this.obj}`);
+class Car extends Vehicle {
+    constructor(colour, wheels) {
+        super(wheels ? wheels : 4);
+        this.colour = colour;
+    }
+
+    drive() {
+        super.drive();
+        console.log(`It is a ${this.colour} car!!!`);
+    }
 }
 
-inherited.printAll();
+const redCar = new Car("red");
+redCar.drive();
+
+const blueDemon = new Car("blue", 8);
+blueDemon.drive();
+
