@@ -1,17 +1,30 @@
-const person = {
-    name: "Andrej Istomin",
-    position: "Software Developer",
-    address: {
-        country: "Germany",
-        city: "Schwabhausen"
-    },
-    hobbies: ["football", "music", "reading"]
-};
+const makeError = () => {
+    let i = 1;
+    while (i <= 5) {
+        try {
+            // throw new Error("Custom Error!")
+            if (i % 2 !== 0) {
+                throw new MyError("Odd number!")
+            }
+            console.log("Even number!");
+        } catch (e) {
+            // console.log(e.name);
+            // console.log(e.message);
+            // console.log(e.stack);
+            console.warn(e);
+        } finally {
+            console.log("... finally");
+            i++;
+        }
+    }
+}
 
-console.log(person);
+class MyError {
+    constructor(msg) {
+        this.name = this.constructor.name;
+        this.message = msg;
+        this.stack = `${this.name}: ${msg}`;
+    }
+}
 
-const json = JSON.stringify(person);
-console.log(json);
-
-const deserialised = JSON.parse(json);
-console.log(deserialised);
+makeError();
