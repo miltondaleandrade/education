@@ -6,25 +6,18 @@ body {
     font-family: 'Germania One', cursive;;
 }
 
-input, button {
-    font: inherit;
+ol {
+    list-style: upper-roman;
 }
 
-a {
-    text-decoration: overline;
-    cursor: not-allowed;
-    color: black;
+ul li {
+    padding-left: 0.3em;
 }
 
-a:visited {
-    color: green;
+ul li:nth-child(3){
+    color: crimson;
 }
 
-a:hover, a:focus {
-    color: darkgray;
-    background-color: crimson;
-}
-
-a:active {
-    color: lightgray;
+ul ::marker {
+    content: "✞";
 }
