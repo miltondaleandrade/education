@@ -9,3 +9,22 @@ body {
 input, button {
     font: inherit;
 }
+
+a {
+    text-decoration: overline;
+    cursor: not-allowed;
+    color: black;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover, a:focus {
+    color: darkgray;
+    background-color: crimson;
+}
+
+a:active {
+    color: lightgray;
+}
