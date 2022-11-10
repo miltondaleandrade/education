@@ -1,10 +1,25 @@
 document.addEventListener("readystatechange", ev => {
     if (document.readyState === "complete") {
-        init();
+        const user = new Person(
+            "Andrej", ["football", "music", "reading"]
+        );
+        localStorage.setItem("user", JSON.stringify(user));
+        console.log(localStorage.getItem("user"));
+        sessionStorage.setItem("user", JSON.stringify(user));
+        sessionStorage.setItem("user", JSON.stringify(user));
+        console.log(sessionStorage.getItem("user"));
     }
 });
 
-function init() {
+class Person {
+
+    constructor(name, hobbies) {
+        this.name = name;
+        this.hobbies = hobbies;
+    }
+}
+
+function buttons() {
     const button = document.querySelector(".myButton");
     button.addEventListener("mouseover", evt => {
        evt.target.classList.add("hover");
