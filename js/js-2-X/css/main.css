@@ -24,6 +24,24 @@ h1 {
     font-size: 250%;
 }
 
-.myview {
+.myButton {
+    text-align: center;
+    display: flex;
+    color: white;
+    padding: 1rem;
+}
 
+.norm {
+    background: crimson;
+    color: white;
+}
+
+.hover {
+    background: red;
+    color: white;
+}
+
+.clicked {
+    background: white;
+    color: crimson;
 }
