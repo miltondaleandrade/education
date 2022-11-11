@@ -1,23 +1,12 @@
+import Person from "./module";
+
 document.addEventListener("readystatechange", ev => {
     if (document.readyState === "complete") {
-        const user = new Person(
-            "Andrej", ["football", "music", "reading"]
-        );
-        localStorage.setItem("user", JSON.stringify(user));
-        console.log(localStorage.getItem("user"));
-        sessionStorage.setItem("user", JSON.stringify(user));
-        sessionStorage.setItem("user", JSON.stringify(user));
-        console.log(sessionStorage.getItem("user"));
+        const andrej = new Person("Andrej", "Istomin");
+        console.log(andrej.greeting());
     }
 });
 
-class Person {
-
-    constructor(name, hobbies) {
-        this.name = name;
-        this.hobbies = hobbies;
-    }
-}
 
 function buttons() {
     const button = document.querySelector(".myButton");
