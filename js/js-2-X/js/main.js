@@ -1,15 +1,16 @@
-const users = fetch("https://jsonplaceholder.typicode.com/users");
+const myUsers = {
+    users: []
+}
 
-// pending
-console.log(users);
+const loadUser = async () => {
+    const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+    return await resp.json();
+}
 
-// properly:
-fetch("https://jsonplaceholder.typicode.com/users")
-    .then(resp => {
-        return resp.json();
-    })
-    .then(json => {
-        json.forEach(user => {
-            console.log(user.name);
-        })
-    })
+const buildUsers = async () => {
+    myUsers.users = await loadUser();
+}
+
+await buildUsers();
+
+console.log(myUsers.users);
