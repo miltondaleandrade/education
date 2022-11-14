@@ -1,16 +1,14 @@
-const myUsers = {
-    users: []
-}
-
-const loadUser = async () => {
+const loadUserEmails = async () => {
     const resp = await fetch("https://jsonplaceholder.typicode.com/users");
-    return await resp.json();
+    const json = await resp.json();
+    const emails = json.map(user => {
+        return user.email;
+    });
+    postToPage(emails);
 }
 
-const buildUsers = async () => {
-    myUsers.users = await loadUser();
+const postToPage = (data) => {
+    console.log(data)
 }
 
-await buildUsers();
-
-console.log(myUsers.users);
+loadUserEmails();
