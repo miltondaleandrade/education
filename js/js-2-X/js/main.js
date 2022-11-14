@@ -1,14 +1,13 @@
-const loadUserEmails = async () => {
-    const resp = await fetch("https://jsonplaceholder.typicode.com/users");
-    const json = await resp.json();
-    const emails = json.map(user => {
-        return user.email;
+const postData = async (json) => {
+    const response = await fetch("https://httpbin.org/post", {
+       method: "POST",
+       headers: {
+           "Content-Type": "application/json"
+       },
+       body: JSON.stringify(json)
     });
-    postToPage(emails);
+    const result = await response.json();
+    console.log(result);
 }
 
-const postToPage = (data) => {
-    console.log(data)
-}
-
-loadUserEmails();
+postData({name: "Test Name"});
