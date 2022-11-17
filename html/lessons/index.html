@@ -190,43 +190,46 @@
         <h2>Contact Me</h2>
         <p>I'd really like to hear from you!</p>
         <form action="https://httpbin.org/get" method="get">
-            <p>
-                <label for="firstName">First Name</label>
-                <input type="text" name="FirstName"
-                       id="firstName" placeholder="Jane"
-                       autocomplete="on" required autofocus>
-            </p>
-            <p>
-                <label for="lastName">Last Name</label>
-                <input type="text" name="LastName"
-                       id="lastName" placeholder="Doe"
-                       autocomplete="on">
-            </p>
-            <p>
-                <label for="password">Password</label>
-                <input type="password" name="password"
-                       id="password" placeholder="Your Secret">
-            </p>
-            <p>
-                <label for="decade">Favourite Decade</label>
-                <input type="number" name="decade"
-                       id="decade" min="1950" max="2020" step="10" value="1980">
-            </p>
-            <p>
-                <label for="coffee">Favourite Coffee</label>
-                <select name="coffee" id="coffee">
-                    <optgroup label="Coffees">
-                        <option value="regular coffee">Regular Coffee</option>
-                        <option value="iced coffee">Iced Coffee</option>
-                    </optgroup>
-                    <optgroup label="Espresso Drinks">
-                        <option value="latte" selected>Latte</option>
-                        <option value="cappuccino">Cappuccino</option>
-                        <option value="cortado">Cortado</option>
-                        <option value="americano">Americano</option>
-                    </optgroup>
-                </select>
-            </p>
+            <fieldset>
+                <legend>Personal Info</legend>
+                <p>
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="FirstName"
+                           id="firstName" placeholder="Jane"
+                           autocomplete="on" required autofocus>
+                </p>
+                <p>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="LastName"
+                           id="lastName" placeholder="Doe"
+                           autocomplete="on">
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" name="password"
+                           id="password" placeholder="Your Secret">
+                </p>
+                <p>
+                    <label for="decade">Favourite Decade</label>
+                    <input type="number" name="decade"
+                           id="decade" min="1950" max="2020" step="10" value="1980">
+                </p>
+                <p>
+                    <label for="coffee">Favourite Coffee</label>
+                    <select name="coffee" id="coffee">
+                        <optgroup label="Coffees">
+                            <option value="regular coffee">Regular Coffee</option>
+                            <option value="iced coffee">Iced Coffee</option>
+                        </optgroup>
+                        <optgroup label="Espresso Drinks">
+                            <option value="latte" selected>Latte</option>
+                            <option value="cappuccino">Cappuccino</option>
+                            <option value="cortado">Cortado</option>
+                            <option value="americano">Americano</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </fieldset>
         </form>
     </article>
 </main>
