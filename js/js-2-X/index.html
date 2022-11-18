@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>My Page</title>
     <link rel="stylesheet" href="css/main.css">
-    <script type="module" src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 <body>
 <main>
     <section>
-        <div class="myButton norm">My Button</div>
+        <form id="phoneForm">
+            <fieldset>
+                <legend>Phone</legend>
+                <p>
+                    <label for="phone">Enter the phone:</label><input type="text" id="phone">
+                </p>
+                <p class="phoneFormat invisible">Examples: (555)555-5555 or 123-456-7899</p>
+            </fieldset>
+        </form>
     </section>
 </main>
 </body>
