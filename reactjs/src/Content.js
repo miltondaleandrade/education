@@ -4,11 +4,11 @@ const Content = () => {
         return names[Math.floor(Math.random() * 3)]
     }
     return (
-        <header>
+        <main>
             <main>
                 <p>Hello {handleNameChange()}!</p>
             </main>
-        </header>
+        </main>
     )
 }
 
