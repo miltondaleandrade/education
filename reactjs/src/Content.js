@@ -1,16 +1,19 @@
+import {useState} from "react";
+
 const Content = () => {
+
+    const [name, setName] = useState("Andrej");
+
     const handleNameChange = () => {
         const names = ['Bob', 'Dave', 'Andrej'];
-        return names[Math.floor(Math.random() * 3)]
+        setName(names[Math.floor(Math.random() * 3)])
     }
-    const onClick = (e) => {
-        console.log(e.target)
-    }
+
     return (
         <main>
             <main>
-                <p onDoubleClick={ (e) => onClick(e)}>
-                    Hello {handleNameChange()}!
+                <p onDoubleClick={handleNameChange}>
+                    Hello {name}!
                 </p>
             </main>
         </main>
