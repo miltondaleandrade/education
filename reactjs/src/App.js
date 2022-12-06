@@ -3,6 +3,7 @@ import Content from "./Content";
 import Footer from "./Footer";
 import {useState} from "react";
 import ItemAdd from "./ItemAdd";
+import ItemSearch from "./ItemSearch";
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
 
     const [newItem, setNewItem] = useState('')
 
+    const [search, setSearch] = useState('')
+
     const setAndSaveItems = (newItems) => {
         setItems(newItems);
         localStorage.setItem(storageName, JSON.stringify(newItems));
@@ -20,7 +23,7 @@ function App() {
     const addItem = (item) => {
         console.log("Add: " + item);
         const id = items.length ? items[items.length - 1] : 1;
-        const myNewItem = {id: id, checked: false, name: item};
+        const myNewItem = {id: id, checked: false, item: item};
         const listItems = [...items, myNewItem];
         setAndSaveItems(listItems);
     }
@@ -53,8 +56,12 @@ function App() {
                 setNewItem={setNewItem}
                 handleSubmit={handleSubmit}
             />
+            <ItemSearch
+                search={search}
+                setSearch={setSearch}
+            />
             <Content
-                items={items}
+                items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
                 handleClick={handleClick}
                 handleDelete={handleDelete}
             />

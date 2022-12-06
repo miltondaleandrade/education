@@ -11,7 +11,7 @@ const ItemLine = ({item, handleClick, handleDelete}) => {
             <label
                 onDoubleClick={() => handleClick(item.id)}
                 style={item.checked ? {textDecoration: 'line-through'} : null}
-            >{item.name}</label>
+            >{item.item}</label>
             <FaTrashAlt
                 role="button"
                 tabIndex="0"
