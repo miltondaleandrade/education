@@ -5,29 +5,16 @@ import {useState} from "react";
 import ItemAdd from "./ItemAdd";
 
 function App() {
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            checked: true,
-            name: "Item 1"
-        },
-        {
-            id: 2,
-            checked: false,
-            name: "Item 2"
-        },
-        {
-            id: 3,
-            checked: false,
-            name: "Item 3"
-        }
-    ]);
+
+    const storageName = 'shoppinglist';
+
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem(storageName)));
 
     const [newItem, setNewItem] = useState('')
 
     const setAndSaveItems = (newItems) => {
         setItems(newItems);
-        localStorage.setItem('shoppinglist', JSON.stringify(newItems));
+        localStorage.setItem(storageName, JSON.stringify(newItems));
     }
 
     const addItem = (item) => {
