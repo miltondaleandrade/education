@@ -7,9 +7,7 @@ import ItemSearch from "./ItemSearch";
 
 function App() {
 
-    const storageName = 'shoppinglist';
-
-    const [items, setItems] = useState(JSON.parse(localStorage.getItem(storageName)));
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
 
     const [newItem, setNewItem] = useState('')
 
@@ -17,27 +15,23 @@ function App() {
 
     const setAndSaveItems = (newItems) => {
         setItems(newItems);
-        localStorage.setItem(storageName, JSON.stringify(newItems));
+        localStorage.setItem('shoppinglist', JSON.stringify(newItems));
     }
 
     const addItem = (item) => {
-        console.log("Add: " + item);
-        const id = items.length ? items[items.length - 1] : 1;
-        const myNewItem = {id: id, checked: false, item: item};
+        const id = items.length ? items[items.length - 1].id + 1 : 1;
+        const myNewItem = { id, checked: false, item };
         const listItems = [...items, myNewItem];
         setAndSaveItems(listItems);
     }
 
-    const handleClick = (id) => {
-        const listItems = items.map(
-            (item) =>
-                item.id === id ? {...item, checked: !item.checked} : item
-        );
+    const handleCheck = (id) => {
+        const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
         setAndSaveItems(listItems);
     }
 
     const handleDelete = (id) => {
-        const listItems = items.filter(item => item.id !== id)
+        const listItems = items.filter((item) => item.id !== id);
         setAndSaveItems(listItems);
     }
 
@@ -62,10 +56,10 @@ function App() {
             />
             <Content
                 items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
-                handleClick={handleClick}
+                handleCheck={handleCheck}
                 handleDelete={handleDelete}
             />
-            <Footer length={items.length}/>
+            <Footer length={items.length} />
         </div>
     );
 }
