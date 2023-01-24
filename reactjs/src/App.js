@@ -78,9 +78,14 @@ function App() {
         }
     }
 
-    const handleDelete = (id) => {
+    const handleDelete = async (id) => {
         const listItems = items.filter((item) => item.id !== id);
         setItems(listItems);
+        const deleteOptions = {method: 'DELETE'}
+        const result = await apiRequest(`${API_URL}/${id}`, deleteOptions);
+        if (result) {
+            setFetchError(result)
+        }
     }
 
     const handleSubmit = (e) => {
