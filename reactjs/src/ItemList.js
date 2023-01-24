@@ -1,13 +1,13 @@
 import ItemLine from "./ItemLine";
 
-const ItemList = ({items, handleClick, handleDelete}) => {
+const ItemList = ({items, handleCheck, handleDelete}) => {
     return (
         <ul>
             {items.map((item) => (
                 <ItemLine
                     key={item.id}
                     item={item}
-                    handleClick={handleClick}
+                    handleCheck={handleCheck}
                     handleDelete={handleDelete}
                 />
             ))}

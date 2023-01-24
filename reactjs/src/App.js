@@ -40,7 +40,7 @@ function App() {
         }
         setTimeout(() => {
             fetchItems();
-        }, 10000);
+        }, 1000);
     }, [])
 
     const addItem = async (item) => {
@@ -61,9 +61,21 @@ function App() {
         }
     }
 
-    const handleCheck = (id) => {
+    const handleCheck = async (id) => {
         const listItems = items.map((item) => item.id === id ? {...item, checked: !item.checked} : item);
         setItems(listItems);
+        const myItem = listItems.filter(item => item.id === id)[0];
+        const updateOptions = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({checked: myItem.checked})
+        }
+        const result = await apiRequest(`${API_URL}/${id}`, updateOptions);
+        if (result) {
+            setFetchError(result)
+        }
     }
 
     const handleDelete = (id) => {
