@@ -9,6 +9,7 @@ import Missing from './Missing';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import {useState, useEffect} from "react";
 import {format} from "date-fns";
+import api from './api/posts';
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -19,12 +20,24 @@ function App() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await api.get('/posts');
+                setPosts(response.data);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        fetchPosts();
+    }, [])
+
+    useEffect(() => {
         const filteredResults = posts.filter(post =>
             (post.body.toLowerCase().includes(search.toLowerCase()))
-                || (post.title.toLowerCase().includes(search.toLowerCase()))
+            || (post.title.toLowerCase().includes(search.toLowerCase()))
         )
         setSearchResults(filteredResults.reverse());
-    },[posts, search])
+    }, [posts, search])
 
     const handleSubmit = (e) => {
         e.preventDefault();
