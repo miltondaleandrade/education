@@ -11,26 +11,7 @@ import {useState, useEffect} from "react";
 import {format} from "date-fns";
 
 function App() {
-    const [posts, setPosts] = useState([
-        {
-            id: 1,
-            title: "First",
-            dateTime: "July 01, 2021 11:17:36 AM",
-            body: "Here is the first post"
-        },
-        {
-            id: 2,
-            title: "Second",
-            dateTime: "July 02, 2021 10:20:41 AM",
-            body: "Here is the second post"
-        },
-        {
-            id: 3,
-            title: "Third",
-            dateTime: "August 20, 2021 06:17:36 AM",
-            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula elementum neque, efficitur dictum dolor efficitur et. Donec iaculis tristique nibh, eu vestibulum elit pellentesque eu. Curabitur sem tortor, sollicitudin eget rhoncus et, hendrerit eu leo. Suspendisse potenti. In condimentum vehicula augue, eu malesuada massa blandit eget. Curabitur ac mi neque. Sed erat urna, aliquam nec lacinia ut, rutrum vitae metus. Praesent quis lectus feugiat, convallis nibh eget, placerat arcu. Ut lectus lectus, cursus laoreet dui venenatis, feugiat egestas justo. Nam lectus ipsum, viverra eu sagittis vitae, hendrerit et tortor. Fusce sodales tempus faucibus. Nunc urna urna, fringilla et mollis vitae, sollicitudin vel nulla. Ut porttitor consectetur neque eu elementum."
-        }
-    ]);
+    const [posts, setPosts] = useState([]);
     const [search, setSearch] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [postTitle, setPostTitle] = useState('');
