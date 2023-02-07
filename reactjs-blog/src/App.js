@@ -93,13 +93,9 @@ function App() {
         <div className="App">
             <DataProvider>
                 <Header title="React JS Blog"/>
-                <Nav search={search} setSearch={setSearch}/>
+                <Nav/>
                 <Routes>
-                    <Route path="/" element={<Home
-                        posts={searchResults}
-                        fetchError={fetchError}
-                        isLoading={isLoading}
-                    />}/>
+                    <Route path="/" element={<Home/>}/>
                     <Route exact path="/post"
                            element={<NewPost
                                handleSubmit={handleSubmit}
