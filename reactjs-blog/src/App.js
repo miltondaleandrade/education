@@ -37,58 +37,6 @@ function App() {
         setSearchResults(filteredResults.reverse());
     }, [posts, search])
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-        const dateTime = format(new Date(), 'MMMM dd, yyyy pp');
-        const newPost = {
-            id: id,
-            dateTime: dateTime,
-            title: postTitle,
-            body: postBody
-        };
-        try {
-            const response = await api.post('/posts', newPost);
-            const allPosts = [...posts, response.data];
-            setPosts(allPosts);
-            setPostTitle('');
-            setPostBody('');
-            navigate('/');
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    const handleEdit = async (id) => {
-        const dateTime = format(new Date(), 'MMMM dd, yyyy pp');
-        const updatedPost = {
-            id: id,
-            dateTime: dateTime,
-            title: editTitle,
-            body: editBody
-        };
-        try {
-            const reponse = await api.put(`/posts/${id}`, updatedPost);
-            setPosts(posts.map(post => post.id === id ? {...reponse.data} : post));
-            setEditTitle('');
-            setEditBody('');
-            navigate('/');
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    const handleDelete = async (id) => {
-        try {
-            await api.delete(`posts/${id}`);
-            const postsList = posts.filter(post => post.id !== id);
-            setPosts(postsList);
-            navigate('/');
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
     return (
         <div className="App">
             <DataProvider>
@@ -98,7 +46,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route exact path="/post" element={<NewPost/>}/>
                     <Route path="/edit/:id" element={<EditPost/>}/>
-                    <Route exact path="/post/:id" element={<PostPage posts={posts} handleDelete={handleDelete}/>}/>
+                    <Route exact path="/post/:id" element={<PostPage/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="*" element={<Missing/>}/>
                 </Routes>
