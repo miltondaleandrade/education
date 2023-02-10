@@ -96,15 +96,7 @@ function App() {
                 <Nav/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route exact path="/post"
-                           element={<NewPost
-                               handleSubmit={handleSubmit}
-                               postTitle={postTitle}
-                               setPostTitle={setPostTitle}
-                               postBody={postBody}
-                               setPostBody={setPostBody}
-                           />}
-                    />
+                    <Route exact path="/post" element={<NewPost/>}/>
                     <Route path="/edit/:id"
                            element={<EditPost
                                posts={posts}
